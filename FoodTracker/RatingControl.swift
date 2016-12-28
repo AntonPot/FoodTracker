@@ -40,6 +40,7 @@ import UIKit
     // MARK: - Button Action
     func ratingButtonTapped(button: UIButton) -> Void {
         print("Button pressed 👍")
+
     }
 
     
@@ -53,10 +54,20 @@ import UIKit
         }
         ratingButtons.removeAll()
         
+        // Load button images
+        let bundle = Bundle(for: type(of: self))
+        let filledStar = UIImage(named: "filledStar", in: bundle, compatibleWith: self.traitCollection)
+        let highlightedStar = UIImage(named: "highlightedStar", in: bundle, compatibleWith: self.traitCollection)
+        let emptyStar = UIImage(named: "emptyStar", in: bundle, compatibleWith: self.traitCollection)
+        
+        
         for _ in 0..<starCount {
             // Create the button
             let button = UIButton()
-            button.backgroundColor = UIColor.red
+            button.setImage(emptyStar, for: UIControlState.normal)
+            button.setImage(filledStar, for: UIControlState.selected)
+            button.setImage(highlightedStar, for: UIControlState.highlighted)
+            button.setImage(highlightedStar, for: [UIControlState.highlighted, UIControlState.selected])
             
             // Add constraints
             button.translatesAutoresizingMaskIntoConstraints = false
@@ -73,6 +84,4 @@ import UIKit
             ratingButtons.append(button)
         }
     }
-    
-    
 }
