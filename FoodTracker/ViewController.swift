@@ -62,6 +62,7 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
         mealNameLabel.text = "Default Text"
         
     }
+    
     @IBAction func selectImageFromPhotoLibrary(_ sender: UITapGestureRecognizer) {
         // Hide the keyboard
         nameTextField.resignFirstResponder()
