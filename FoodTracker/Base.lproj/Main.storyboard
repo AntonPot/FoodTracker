@@ -24,7 +24,7 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="90"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Okj-J9-8qn" id="Sj0-ye-XRT">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="89"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="89.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="defaultPhoto" translatesAutoresizingMaskIntoConstraints="NO" id="86b-dz-qi8">
@@ -123,6 +123,7 @@
                         <outlet property="nameTextField" destination="7D0-tJ-IOf" id="x2L-io-M97"/>
                         <outlet property="photoImageView" destination="NZ2-pV-Omh" id="vFT-nc-zCT"/>
                         <outlet property="ratingControl" destination="pdp-Xv-Me8" id="KFO-b3-fdh"/>
+                        <outlet property="saveButton" destination="0Fx-cY-mmK" id="d9q-oJ-JAa"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
