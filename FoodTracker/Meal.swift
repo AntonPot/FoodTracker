@@ -7,13 +7,30 @@
 //
 
 import UIKit
+import os.log
 
-class Meal {
+class Meal: NSObject, NSCoding {
     
     // MARK: - Properties
     var name: String
     var rating: Int
     var photo: UIImage?
+    
+    
+    // MARK: - Archiving Paths
+//    static var DocumentsDirectory = FileManager().urls(for: .documentDirectory, in: .userDomainMask).first!
+//    static let ArchiveURL = DocumentsDirectory.appendPathComponent("meal")
+    static let DocumentsDirectory = FileManager().urls(for: .documentDirectory, in: .userDomainMask).first!
+    static let ArchiveURL = DocumentsDirectory.appendingPathComponent("meals")
+    
+    
+    
+    // MARK: - Types
+    struct PropertyKey {
+        static let name = "name"
+        static let rating = "rating"
+        static let photo = "photo"
+    }
     
     
     // MARK: - Initializers
@@ -29,5 +46,28 @@ class Meal {
         self.rating = rating
         self.photo = photo
     }
+
     
+    // MARK: - NSCoding Methods
+    func encode(with aCoder: NSCoder) {
+        aCoder.encode(name, forKey: PropertyKey.name)
+        aCoder.encode(rating, forKey: PropertyKey.rating)
+        aCoder.encode(photo, forKey: PropertyKey.photo)
+    }
+    
+    required convenience init?(coder aDecoder: NSCoder) {
+        // The name is required, if we cannot decode the name string the initializer should fail
+        guard let name = aDecoder.decodeObject(forKey: PropertyKey.name) as? String else {
+            os_log("Unable to decode the name for Meal object", log: OSLog.default, type: .debug)
+            return nil
+        }
+        
+        let rating = aDecoder.decodeObject(forKey: PropertyKey.rating) as! Int
+        
+        // Because photo is an optional property of Meal, just use conditional cast
+        let photo = aDecoder.decodeObject(forKey: PropertyKey.photo) as? UIImage
+        
+        // Must call designated initializer
+        self.init(name: name, rating: rating, photo: photo)
+    }
 }
