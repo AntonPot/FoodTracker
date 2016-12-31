@@ -18,8 +18,6 @@ class Meal: NSObject, NSCoding {
     
     
     // MARK: - Archiving Paths
-//    static var DocumentsDirectory = FileManager().urls(for: .documentDirectory, in: .userDomainMask).first!
-//    static let ArchiveURL = DocumentsDirectory.appendPathComponent("meal")
     static let DocumentsDirectory = FileManager().urls(for: .documentDirectory, in: .userDomainMask).first!
     static let ArchiveURL = DocumentsDirectory.appendingPathComponent("meals")
     
@@ -62,10 +60,10 @@ class Meal: NSObject, NSCoding {
             return nil
         }
         
-        let rating = aDecoder.decodeObject(forKey: PropertyKey.rating) as! Int
-        
         // Because photo is an optional property of Meal, just use conditional cast
         let photo = aDecoder.decodeObject(forKey: PropertyKey.photo) as? UIImage
+        
+        let rating = aDecoder.decodeInteger(forKey: PropertyKey.rating)
         
         // Must call designated initializer
         self.init(name: name, rating: rating, photo: photo)

@@ -81,7 +81,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="b16-eq-rG7">
+                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="b16-eq-rG7">
                                 <rect key="frame" x="16" y="84" width="343" height="410"/>
                                 <subviews>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter meal name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7D0-tJ-IOf">
@@ -124,7 +124,7 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="0Fx-cY-mmK">
                             <connections>
-                                <segue destination="3TM-ru-MRp" kind="unwind" unwindAction="unwindToMealListWithSender:" id="xqg-qK-ikD"/>
+                                <segue destination="3TM-ru-MRp" kind="unwind" unwindAction="unwindToMealListWithSender:" id="7CV-oX-gqL"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -143,7 +143,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="2047.2" y="115.59220389805098"/>
+            <point key="canvasLocation" x="1303" y="116"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Aiz-fh-HtC">
@@ -161,7 +161,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="d6N-oM-2Vl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-746.39999999999998" y="116.49175412293854"/>
+            <point key="canvasLocation" x="-365" y="116"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="am5-ZK-3Ph">
@@ -179,13 +179,13 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="r0Z-8H-Vm9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1114" y="463"/>
+            <point key="canvasLocation" x="751" y="503"/>
         </scene>
     </scenes>
     <resources>
         <image name="defaultPhoto" width="1080" height="1080"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="qXW-Nd-SvV"/>
+        <segue reference="8nL-PY-rlF"/>
     </inferredMetricsTieBreakers>
 </document>
